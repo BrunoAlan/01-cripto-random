@@ -7,22 +7,13 @@ const getCriptoNumber = async () => {
 };
 
 export const useRandom = () => {
-      const {
-            isLoading,
-            isFetching,
-            data: number,
-            error,
-            refetch } = useQuery({
-                  queryKey: ['randomNumber'],
-                  queryFn: getCriptoNumber,
-                  // refetchOnWindowFocus: false,  
-            });
+      const randomQuery = useQuery({
+            queryKey: ['randomNumber'],
+            queryFn: getCriptoNumber,
+            // refetchOnWindowFocus: false,  
+      });
 
       return {
-            isLoading,
-            isFetching,
-            number,
-            error,
-            refetch,
+            randomQuery
       };
 };
